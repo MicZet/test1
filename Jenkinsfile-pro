@@ -35,7 +35,7 @@ pipeline {
 					steps {
 						echo "PROD env"
 						sh 'scp **/script.sh nichu@${params.prod-srv}:/tmp/'
-						sh 'python /tmp/script.sh'
+						sh 'bash /tmp/script.sh'
 					}
 					post {
 						success {

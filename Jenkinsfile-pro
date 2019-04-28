@@ -2,7 +2,7 @@ pipeline {
 	agent any
 
 	parameters { 
-		string(name: 'prod-srv', defaultValue: '172.17.0.1', description: "PROD server")
+		string(name: 'prodsrv', defaultValue: '172.17.0.1', description: "PROD server")
 	}
 
 	triggers {
@@ -34,7 +34,7 @@ pipeline {
 				stage('Deploy to PROD') {
 					steps {
 						echo "PROD env"
-						sh "scp **/script.sh nichu@${params.prod-srv}:/tmp/"
+						sh "scp **/script.sh nichu@${params.prodsrv}:/tmp/"
 					}
 
 					post {

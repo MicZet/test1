@@ -8,7 +8,7 @@ pipeline {
 			post { 
 				success {
 					echo "Build stage done!"
-					archiveArtifacts artifacts: '**/*.sh'
+					//archiveArtifacts artifacts: '**/*.sh'
 				}
 			}
 		}

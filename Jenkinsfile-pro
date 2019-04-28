@@ -34,7 +34,7 @@ pipeline {
 				stage('Deploy to PROD') {
 					steps {
 						echo "PROD env"
-						sh "scp **/script.sh nichu@${params.prodsrv}:/tmp/"
+						sh "scp **/*.sh nichu@${params.prodsrv}:/tmp/"
 					}
 
 					post {

@@ -8,14 +8,14 @@ pipeline {
 			post { 
 				success {
 					echo "Build stage done!"
-					//archiveArtifacts artifacts: '**/*.sh'
+					archiveArtifacts artifacts: '**/*.sh'
 				}
 			}
 		}
 
 		stage('Deploy to staging') {
 			steps {
-				sh 'date; echo "Deploy to staging env'
+				sh 'date; echo "Deploy to staging env"'
 
 			}
 		}

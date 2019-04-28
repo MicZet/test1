@@ -28,7 +28,7 @@ pipeline {
 				stage('Deploy to Staging') {
 					steps {
 						echo "Staging env"
-						sh 'python script.sh'
+						sh 'bash script.sh'
 					}
 				}
 				stage('Deploy to PROD') {

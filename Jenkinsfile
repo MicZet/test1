@@ -16,7 +16,6 @@ pipeline {
 		stage('Deploy to staging') {
 			steps {
 				sh 'date; echo "Deploy to staging env"'
-
 			}
 		}
 	}

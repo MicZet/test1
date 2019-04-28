@@ -7,6 +7,6 @@ echo "SURE IT IS .. "
 
 echo "Jenking polling test OK . . . . ."
 
-echo "Hook test #4"
+echo "Hook test #5"
 
 date > test1.txt

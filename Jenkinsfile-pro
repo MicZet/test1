@@ -35,7 +35,7 @@ pipeline {
 					steps {
 						echo "PROD env"
 						sh "scp *.sh nichu@${params.prodsrv}:/rozne/devops/publish-over-ssh/"
-						sh "chmod +x /rozne/devops/publish-over-ssh/script.sh ; bash /rozne/devops/publish-over-ssh/script.sh"
+						sh "ssh nichu@${params.prodsrv} 'chmod +x /rozne/devops/publish-over-ssh/script.sh ; bash /rozne/devops/publish-over-ssh/script.sh'"
 					}
 
 					post {

@@ -38,7 +38,7 @@ pipeline {
 				stage('Deploy to PROD') {
 					steps {
 						echo "PROD env"
-						sh "ssh nichu@${params.prodsrv} 'docker build . -t mybashapp:${env.BUILD_ID}'"
+						sh "ssh nichu@${params.prodsrv} 'cd /rozne/devops/publish-over-ssh/; docker build . -t mybashapp:${env.BUILD_ID}'"
 						//sh "ssh nichu@${params.prodsrv} 'chmod +x /rozne/devops/publish-over-ssh/script.sh ; bash /rozne/devops/publish-over-ssh/script.sh'"
 					}
 

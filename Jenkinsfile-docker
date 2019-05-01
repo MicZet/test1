@@ -22,7 +22,7 @@ pipeline {
 			post { 
 				success {
 					echo "Build stage done!"
-					archiveArtifacts artifacts: '**/*.sh Dockerfile'
+					archiveArtifacts artifacts: '**/*.sh,Dockerfile'
 				}
 			}
 		}

@@ -14,6 +14,8 @@ pipeline {
 		stage('Build') {
 			steps {
 				sh 'date; echo "Build stage"'
+				# as a tag to docker - build id from jenkins
+				sh "docker build . -t mybashapp:${env.BUILD_ID}"
 			}
 			post { 
 				success {

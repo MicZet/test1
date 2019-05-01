@@ -14,7 +14,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				sh 'date; echo "Build stage"'
-				# as a tag to docker - build id from jenkins
+				// as a tag to docker - build id from jenkins
 				echo "Sending files to sherlock PROD"
 				sh "scp *.sh nichu@${params.prodsrv}:/rozne/devops/publish-over-ssh/"
 				sh "scp Dockerfile nichu@${params.prodsrv}:/rozne/devops/publish-over-ssh/"

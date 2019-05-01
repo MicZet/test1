@@ -16,12 +16,13 @@ pipeline {
 				sh 'date; echo "Build stage"'
 				# as a tag to docker - build id from jenkins
 				echo "Sending files to sherlock PROD"
-				sh "scp *.sh Dockerfile nichu@${params.prodsrv}:/rozne/devops/publish-over-ssh/"
+				sh "scp *.sh nichu@${params.prodsrv}:/rozne/devops/publish-over-ssh/"
+				sh "scp Dockerfile nichu@${params.prodsrv}:/rozne/devops/publish-over-ssh/"
 			}
 			post { 
 				success {
 					echo "Build stage done!"
-					archiveArtifacts artifacts: '**/*.sh'
+					archiveArtifacts artifacts: '**/*.sh Dockerfile'
 				}
 			}
 		}
